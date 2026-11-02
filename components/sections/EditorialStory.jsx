@@ -1,0 +1,41 @@
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+
+import { Container } from "@/components/ui/Container";
+import { EditorialLabel } from "@/components/ui/EditorialLabel";
+import { ImageFrame } from "@/components/ui/ImageFrame";
+
+export function EditorialStory() {
+  return (
+    <section className="py-20 sm:py-28 lg:py-40" aria-labelledby="story-title">
+      <Container>
+        <div className="grid grid-cols-4 gap-x-3 gap-y-8 md:grid-cols-12 md:gap-x-6 md:gap-y-0">
+          <div className="col-span-4 md:col-span-7 md:col-start-1">
+            <ImageFrame
+              src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=85"
+              alt="Fresh herbs, garlic, and vegetables on a wooden kitchen table"
+              width={1600}
+              height={1200}
+              sizes="(min-width: 768px) 58vw, 100vw"
+              className="aspect-[5/4]"
+              style={{ objectFit: "cover" }}
+            />
+            <p className="mt-3 text-xs tracking-[0.04em] text-text-secondary">Notes from a late-summer kitchen.</p>
+          </div>
+          <div className="col-span-4 md:col-span-4 md:col-start-9 md:pt-24">
+            <EditorialLabel>From the journal</EditorialLabel>
+            <h2 id="story-title" className="mt-4 font-display text-[clamp(3rem,5.2vw,5.6rem)] leading-[0.9] tracking-[-0.06em] text-ink">
+              Why August tastes different.
+            </h2>
+            <p className="mt-6 max-w-md text-base leading-7 text-text-secondary">
+              It is not only ripeness. It is the pace of the days, the heat left in the stone fruit, and the small permission to cook a little less precisely.
+            </p>
+            <Link href="/journal" className="mt-8 inline-flex min-h-11 items-center gap-2 border-b border-ink pb-1 text-sm font-medium tracking-[0.03em] text-ink transition-colors duration-200 hover:border-olive hover:text-olive">
+              Read the story <ArrowUpRight size={17} strokeWidth={1.5} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
