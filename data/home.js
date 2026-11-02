@@ -2,29 +2,32 @@ export const featuredRecipes = [
   {
     number: "01",
     title: "Tomato & White Bean Toast",
-    description: "A late-afternoon plate of warm beans, torn basil, and the season's ripest tomatoes.",
-    image: "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=1200&q=85",
-    alt: "Heirloom tomatoes arranged on a rustic table",
-    imageClass: "aspect-[4/5]",
-    layout: "md:col-span-5 md:pt-16",
+    description:
+      "A late-afternoon plate of warm beans, torn basil, and the season's ripest tomatoes.",
+    image: "/images/tomato-white-bean-toast.png",
+    alt: "Tomato and white bean toasts topped with basil on a ceramic plate",
+    imageClass: "aspect-[4/5] md:aspect-[5/6]",
+    layout: "md:col-span-5",
   },
   {
     number: "02",
     title: "Charred Peach Salad",
-    description: "Sweet fruit, bitter leaves, and just enough heat from the grill.",
-    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "Sweet fruit, bitter leaves, and just enough heat from the grill.",
+    image: "/images/charred-peach-salad.png",
     alt: "Seasonal salad served in a ceramic bowl",
-    imageClass: "aspect-[3/2]",
-    layout: "md:col-span-4 md:mt-0",
+    imageClass: "aspect-[3/2] md:aspect-[4/5]",
+    layout: "md:col-span-3",
   },
   {
     number: "03",
     title: "Basil Oil Pasta",
-    description: "A green, glossy bowl for the evenings when the kitchen stays open late.",
-    image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1200&q=85",
+    description:
+      "Fragrant basil oil and parmesan, caught in every fold.",
+    image: "/images/basil-oil-pasta.png",
     alt: "Pasta dish on a dark tabletop",
-    imageClass: "aspect-[5/6]",
-    layout: "md:col-span-3 md:mt-28",
+    imageClass: "aspect-[5/6] md:aspect-square",
+    layout: "md:col-span-4",
   },
 ];
 
