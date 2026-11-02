@@ -1,5 +1,7 @@
 # Future ideas
 
+- [ ] Implement the article at `/journal/why-august-tastes-different` and update the homepage “Read the story” CTA to link to it.
+
 ## Ingredient detail pages — optional
 
 Pantry Index is intentionally a static reference list.
