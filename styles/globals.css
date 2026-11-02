@@ -20,6 +20,24 @@
   --font-sans: var(--font-dm-sans);
 }
 
+@keyframes nourish-cover-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nourish-cover h1,
+  .nourish-cover figure {
+    animation: nourish-cover-enter 450ms ease-out both;
+  }
+}
+
 :root {
   color-scheme: light;
 }

@@ -1,93 +1,63 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownRight } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
 
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
-import { ImageFrame } from "@/components/ui/ImageFrame";
-
-const rise = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 export function EditorialHero() {
-  const reducedMotion = useReducedMotion();
-  const transition = { duration: reducedMotion ? 0 : 0.5, ease: "easeOut" };
-
   return (
-    <section className="overflow-hidden pb-20 pt-12 sm:pb-28 md:pt-18 lg:pb-36">
+    <section aria-labelledby="cover-title" className="nourish-cover pb-10 pt-6 md:pb-16 md:pt-10">
       <Container>
-        <div className="grid grid-cols-4 gap-x-3 gap-y-10 md:grid-cols-12 md:gap-x-6 lg:gap-y-16">
-          <motion.div
-            initial={reducedMotion ? false : "hidden"}
-            animate="visible"
-            variants={rise}
-            transition={transition}
-            className="col-span-4 flex items-center justify-between border-y border-border-subtle py-3 md:col-span-5 md:col-start-1 md:justify-start md:gap-7"
-          >
-            <EditorialLabel>Late Summer / Issue 08</EditorialLabel>
-            <span className="text-xs tracking-[0.08em] text-text-secondary">August 2026</span>
-          </motion.div>
+        <div className="grid grid-cols-1 gap-y-6 md:grid-cols-12 md:gap-x-6">
+          <div className="contents md:col-span-5 md:flex md:flex-col md:justify-center md:pr-6 md:py-8 lg:pr-10">
+            <div className="order-1 flex items-center justify-between gap-3 border-t border-border-strong pt-3 md:order-none">
+              <EditorialLabel>Late summer / <span className="text-tomato">Issue 08</span></EditorialLabel>
+              <time dateTime="2026-08" className="text-[0.6875rem] tracking-[0.06em] text-text-secondary">August 2026</time>
+            </div>
 
-          <motion.p
-            initial={reducedMotion ? false : "hidden"}
-            animate="visible"
-            variants={rise}
-            transition={{ ...transition, delay: reducedMotion ? 0 : 0.08 }}
-            className="col-span-4 text-sm leading-6 text-text-secondary md:col-span-3 md:col-start-2 md:row-start-2 lg:pt-12"
-          >
-            A journal for the meals, ingredients, and small rituals that make a kitchen feel alive.
-          </motion.p>
-
-          <motion.div
-            initial={reducedMotion ? false : "hidden"}
-            animate="visible"
-            variants={rise}
-            transition={{ ...transition, delay: reducedMotion ? 0 : 0.14 }}
-            className="col-span-4 md:col-span-6 md:col-start-1 md:row-start-3"
-          >
-            <h1 className="max-w-[8ch] font-display text-[clamp(3.5rem,8vw,7.5rem)] leading-[0.88] tracking-[-0.06em] text-ink">
-              Eat what the season gives you.
-            </h1>
-            <Link
-              href="#this-week"
-              className="mt-8 inline-flex min-h-11 items-center gap-2 border-b border-ink pb-1 text-sm font-medium tracking-[0.03em] text-ink transition-colors duration-200 hover:border-olive hover:text-olive"
+            <h1
+              id="cover-title"
+              className="order-2 font-display text-[clamp(3rem,13.3vw,4.5rem)] leading-[0.95] tracking-[-0.045em] text-ink md:order-none md:mt-10 md:text-[clamp(3rem,6.5vw,6rem)]"
             >
-              Find this week&apos;s table
-              <ArrowDownRight size={17} strokeWidth={1.5} aria-hidden="true" />
-            </Link>
-          </motion.div>
+              <span className="block">Eat what</span>{" "}
+              <span className="block">the season</span>{" "}
+              <span className="block">gives you.</span>
+            </h1>
 
-          <motion.div
-            initial={reducedMotion ? false : { clipPath: "inset(0 0 100% 0)" }}
-            animate={{ clipPath: "inset(0 0 0% 0)" }}
-            transition={{ duration: reducedMotion ? 0 : 0.8, delay: reducedMotion ? 0 : 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="col-span-4 md:col-span-6 md:col-start-7 md:row-span-3 md:row-start-1"
-          >
-            <ImageFrame
-              src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?auto=format&fit=crop&w=1600&q=85"
-              alt="A table set with seasonal vegetables, linen, and ceramic plates"
-              width={1600}
-              height={2000}
-              priority
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="aspect-[4/5] md:aspect-[3/4]"
-              style={{ objectFit: "cover" }}
-            />
-          </motion.div>
+            <p className="order-4 max-w-[34ch] text-sm leading-6 text-text-secondary md:order-none md:mt-7 lg:text-base lg:leading-7">
+              Ripe tomatoes, generous greens, and the pleasure of a little less cooking. A late-summer issue for the meals and rituals that bring us to the table.
+            </p>
 
-          <motion.p
-            initial={reducedMotion ? false : "hidden"}
-            animate="visible"
-            variants={rise}
-            transition={{ ...transition, delay: reducedMotion ? 0 : 0.2 }}
-            className="col-span-4 border-l border-tomato pl-4 text-sm leading-6 text-text-secondary md:col-span-3 md:col-start-9 md:row-start-4"
-          >
-            This issue is an ode to the generous, imperfect middle of summer.
-          </motion.p>
+            <div className="order-5 md:order-none md:mt-6">
+              <Link
+                href="#this-week"
+                className="inline-flex min-h-11 items-center gap-4 border-b border-ink pb-1 text-sm font-medium tracking-[0.02em] text-ink transition-colors duration-200 hover:border-tomato hover:text-tomato"
+              >
+                Explore the August table
+                <ArrowDownRight size={17} strokeWidth={1.5} aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+
+          <figure className="order-3 min-w-0 md:order-none md:col-span-7">
+            <div className="relative aspect-[6/5] overflow-hidden bg-surface-2">
+              <Image
+                src="/images/hero-august-table.png"
+                alt="Heirloom tomatoes and basil on a ceramic plate beside linen and olive oil in warm sunlight"
+                fill
+                preload
+                sizes="(min-width: 1440px) 772px, (min-width: 768px) 58vw, 100vw"
+                className="object-cover object-[60%_50%]"
+              />
+            </div>
+            <figcaption className="mt-3 flex items-baseline justify-between gap-4 border-t border-border-subtle pt-3 text-[0.6875rem] leading-5 tracking-[0.03em] text-text-secondary">
+              <span><span className="mr-3 text-tomato">08 /</span>The August Table</span>
+              <span className="text-right">A season of plenty.</span>
+            </figcaption>
+          </figure>
         </div>
       </Container>
     </section>
