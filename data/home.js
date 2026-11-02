@@ -3,7 +3,7 @@ export const featuredRecipes = [
     number: "01",
     title: "Tomato & White Bean Toast",
     description: "A late-afternoon plate of warm beans, torn basil, and the season's ripest tomatoes.",
-    image: "https://images.unsplash.com/photo-1546470427-227c1fe3f8f7?auto=format&fit=crop&w=1200&q=85",
+    image: "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=1200&q=85",
     alt: "Heirloom tomatoes arranged on a rustic table",
     imageClass: "aspect-[4/5]",
     layout: "md:col-span-5 md:pt-16",

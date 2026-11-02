@@ -5,6 +5,8 @@ const variants = {
     "bg-ink text-text-inverse hover:bg-ink-hover focus-visible:bg-ink-hover",
   secondary:
     "border border-ink bg-transparent text-ink hover:bg-surface-2 focus-visible:bg-surface-2",
+  inverse:
+    "bg-surface text-ink hover:bg-surface-2 focus-visible:bg-surface-2",
   text: "px-0 text-ink underline-offset-4 hover:underline focus-visible:underline",
 };
 

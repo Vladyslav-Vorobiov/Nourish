@@ -19,7 +19,7 @@ export function Newsletter() {
       <Container>
         <div className="grid grid-cols-4 gap-x-3 md:grid-cols-12 md:gap-x-6">
           <div className="col-span-4 md:col-span-6 md:col-start-2">
-            <EditorialLabel className="text-surface-2">A quiet subscription</EditorialLabel>
+            <EditorialLabel tone="inverse">A quiet subscription</EditorialLabel>
             <h2 id="newsletter-title" className="mt-4 font-display text-[clamp(3rem,5vw,5.5rem)] leading-[0.9] tracking-[-0.06em]">
               Letters from the pantry.
             </h2>
@@ -44,7 +44,7 @@ export function Newsletter() {
                   placeholder="Your email address"
                   className="h-12 w-full border-b border-surface-2 bg-transparent px-0 text-base text-text-inverse placeholder:text-surface-2 focus:outline-none"
                 />
-                <Button type="submit" className="mt-5 min-h-12 w-full bg-surface text-ink hover:bg-surface-2 focus-visible:bg-surface-2">
+                <Button type="submit" variant="inverse" className="mt-5 min-h-12 w-full">
                   Join the letters
                 </Button>
               </form>
