@@ -7,3 +7,23 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Project conventions
+
+- Use JavaScript/JSX. Do not introduce TypeScript.
+- Follow the existing design tokens, typography, and component conventions.
+- Keep website copy in English.
+
+## Working agreements
+
+- Work in small, focused iterations. Modify only what the current task requires.
+- Inspect only the relevant components, styles, and documentation.
+  Do not start a broad project audit unless requested.
+- Preserve unrelated code, content, and completed sections.
+- Do not add dependencies unless the task requires them.
+- For minor visual changes, do not use Playwright or browser automation.
+  The user checks localhost and provides screenshots.
+- Use supplied image assets. Do not generate or replace photography unless asked.
+- Run checks appropriate to the change. Do not add tests for purely cosmetic edits.
+- Finish with a brief summary of changes and checks performed.
+  Clearly state any checks that were not run.
