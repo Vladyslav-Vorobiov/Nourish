@@ -13,6 +13,7 @@ export const featuredRecipes = [
   {
     number: "02",
     title: "Charred Peach Salad",
+    href: "/recipes/charred-peach-salad",
     description:
       "Sweet fruit, bitter leaves, and just enough heat from the grill.",
     image: "/images/charred-peach-salad.png",
@@ -23,6 +24,7 @@ export const featuredRecipes = [
   {
     number: "03",
     title: "Basil Oil Pasta",
+    href: "/recipes/basil-oil-pasta",
     description: "Fragrant basil oil and parmesan, caught in every fold.",
     image: "/images/basil-oil-pasta.png",
     alt: "Pasta dish on a dark tabletop",

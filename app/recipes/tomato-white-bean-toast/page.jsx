@@ -55,7 +55,12 @@ export default function TomatoWhiteBeanToastPage() {
           href="/#this-week"
           className="arrow-link inline-flex min-h-11 items-center gap-2 border-b border-ink pb-1 text-sm font-medium tracking-[0.02em] text-ink transition-colors duration-200 hover:border-olive hover:text-olive focus-visible:border-olive focus-visible:text-olive"
         >
-          <ArrowLeft className="link-arrow link-arrow-left" size={17} strokeWidth={1.5} aria-hidden="true" />
+          <ArrowLeft
+            className="link-arrow link-arrow-left"
+            size={17}
+            strokeWidth={1.5}
+            aria-hidden="true"
+          />
           Back to this week’s recipes
         </Link>
 
@@ -100,7 +105,7 @@ export default function TomatoWhiteBeanToastPage() {
               height={1402}
               loading="eager"
               sizes="(min-width: 1440px) 660px, (min-width: 768px) 50vw, 100vw"
-              className="col-span-4 aspect-[4/5] md:col-span-6 md:col-start-7 md:aspect-[5/6]"
+              className="col-span-4 aspect-4/5 md:col-span-6 md:col-start-7 md:aspect-5/6"
             />
           </div>
 
@@ -112,7 +117,10 @@ export default function TomatoWhiteBeanToastPage() {
               >
                 Ingredients
               </h2>
-              <ul role="list" className="mt-6 divide-y divide-border-subtle border-y border-border-subtle text-base leading-7 text-text-secondary">
+              <ul
+                role="list"
+                className="mt-6 divide-y divide-border-subtle border-y border-border-subtle text-base leading-7 text-text-secondary"
+              >
                 {ingredients.map((ingredient) => (
                   <li key={ingredient} className="py-3">
                     {ingredient}
@@ -121,7 +129,10 @@ export default function TomatoWhiteBeanToastPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="method-title" className="col-span-4 md:col-span-7 md:col-start-6">
+            <section
+              aria-labelledby="method-title"
+              className="col-span-4 md:col-span-7 md:col-start-6"
+            >
               <h2
                 id="method-title"
                 className="font-display text-4xl leading-none tracking-[-0.04em] text-ink"
@@ -130,8 +141,14 @@ export default function TomatoWhiteBeanToastPage() {
               </h2>
               <ol role="list" className="mt-6 space-y-8">
                 {steps.map((step, index) => (
-                  <li key={step.title} className="grid grid-cols-[2rem_1fr] gap-3 md:gap-6">
-                    <span className="pt-1 text-xs tracking-[0.08em] text-tomato" aria-hidden="true">
+                  <li
+                    key={step.title}
+                    className="grid grid-cols-[2rem_1fr] gap-3 md:gap-6"
+                  >
+                    <span
+                      className="pt-1 text-xs tracking-[0.08em] text-tomato"
+                      aria-hidden="true"
+                    >
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <div>
@@ -148,8 +165,14 @@ export default function TomatoWhiteBeanToastPage() {
             </section>
           </div>
 
-          <section aria-labelledby="kitchen-note-title" className="mt-16 border-t border-border-subtle pt-6 md:mt-20">
-            <h2 id="kitchen-note-title" className="font-display text-2xl tracking-[-0.03em] text-ink">
+          <section
+            aria-labelledby="kitchen-note-title"
+            className="mt-16 border-t border-border-subtle pt-6 md:mt-20"
+          >
+            <h2
+              id="kitchen-note-title"
+              className="font-display text-2xl tracking-[-0.03em] text-ink"
+            >
               Kitchen note
             </h2>
             <p className="mt-3 max-w-[60ch] text-base leading-7 text-text-secondary">

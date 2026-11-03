@@ -17,6 +17,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 ## Working agreements
 
 - Work in small, focused iterations. Modify only what the current task requires.
+- Do not run a production build for every small iteration. Run it before release or when changes affect production compilation or static generation.
 - Inspect only the relevant components, styles, and documentation.
   Do not start a broad project audit unless requested.
 - Preserve unrelated code, content, and completed sections.
