@@ -1,6 +1,6 @@
 ---
 name: ui-ux-pro-max
-description: UI/UX design intelligence with searchable database
+description: Design, implement, and review web interfaces using searchable UI/UX guidance while respecting established design systems.
 ---
 # ui-ux-pro-max
 
@@ -11,8 +11,10 @@ Comprehensive design guide for web and mobile applications. Contains 67 styles, 
 Check if Python is installed:
 
 ```bash
-python3 --version || python --version
+python --version
 ```
+
+Examples below run from the repository root and use `python`, the working Windows interpreter. On systems where Python 3 is named `python3`, substitute that executable. `-B` prevents bytecode cache writes. Replace angle-bracket placeholders before running commands.
 
 If Python is not installed, install it based on user's OS:
 
@@ -35,7 +37,13 @@ winget install Python.Python.3.12
 
 ## How to Use This Skill
 
-When user requests UI/UX work (design, build, create, implement, review, fix, improve), follow this workflow:
+When user requests UI/UX work (design, build, create, implement, review, fix, improve), follow the applicable steps below.
+
+### Existing Projects: Start with the Approved Design
+
+Read applicable `AGENTS.md`, `DESIGN.md` when present, and the relevant implemented components and styles before choosing recommendations. Preserve established tokens, typography, layouts, assets, and motion specifications. Use targeted domain or stack searches only where they help the current task; routine implementation, review, or fixes do not require a new design system. Follow the project's existing stack and task boundaries.
+
+Generic style examples, palette values, layout patterns, and timing recommendations in this skill or its search results are supplementary guidance. They do not override approved project tokens, layouts, or motion specifications. Use the requested scope of checks rather than expanding work to every checklist item.
 
 ### Step 1: Analyze User Requirements
 
@@ -43,14 +51,14 @@ Extract key information from user request:
 - **Product type**: SaaS, e-commerce, portfolio, dashboard, landing page, etc.
 - **Style keywords**: minimal, playful, professional, elegant, dark mode, etc.
 - **Industry**: healthcare, fintech, gaming, education, etc.
-- **Stack**: React, Vue, Next.js, or default to `html-tailwind`
+- **Stack**: Use the existing project's stack or the user's choice; default to `html-tailwind` only when neither is established
 
-### Step 2: Generate Design System (REQUIRED)
+### Step 2: Generate a Design System (Conditional)
 
-**Always start with `--design-system`** to get comprehensive recommendations with reasoning:
+Use `--design-system` for a new visual direction or when explicitly requested. Skip it for routine work on an established design and go directly to targeted searches if useful. Generation returns recommendations; it does not replace an approved project design. Without `--persist`, it prints results without saving design-system files:
 
 ```bash
-python3 skills/ui-ux-pro-max/scripts/search.py "<product_type> <industry> <keywords>" --design-system [-p "Project Name"]
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "<product_type> <industry> <keywords>" --design-system -p "Project Name"
 ```
 
 This command:
@@ -61,40 +69,42 @@ This command:
 
 **Example:**
 ```bash
-python3 skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness service" --design-system -p "Serenity Spa"
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness service" --design-system -p "Serenity Spa"
 ```
 
-### Step 2b: Persist Design System (Master + Overrides Pattern)
+### Step 2b: Persist a Design System (Opt-in Only)
 
-To save the design system for hierarchical retrieval across sessions, add `--persist`:
+Only when the user requests saved design-system files, add `--persist`. Generation alone does not imply persistence. This option creates directories and writes files, replacing matching files if they already exist:
 
 ```bash
-python3 skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system --persist -p "Project Name"
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system --persist -p "Project Name"
 ```
 
+Paths are relative to the current directory, or `--output-dir` if supplied. `<project-slug>` is the project name lowercased with spaces replaced by hyphens (`Project Name` becomes `project-name`; omitting `-p` uses `default`).
+
 This creates:
-- `design-system/MASTER.md` — Global Source of Truth with all design rules
-- `design-system/pages/` — Folder for page-specific overrides
+- `design-system/<project-slug>/MASTER.md` — Generated design recommendations
+- `design-system/<project-slug>/pages/` — Folder for page-specific overrides
 
 **With page-specific override:**
 ```bash
-python3 skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system --persist -p "Project Name" --page "dashboard"
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "<query>" --design-system --persist -p "Project Name" --page "dashboard"
 ```
 
 This also creates:
-- `design-system/pages/dashboard.md` — Page-specific deviations from Master
+- `design-system/<project-slug>/pages/dashboard.md` — Page-specific deviations from Master
 
 **How hierarchical retrieval works:**
-1. When building a specific page (e.g., "Checkout"), first check `design-system/pages/checkout.md`
-2. If the page file exists, its rules **override** the Master file
-3. If not, use `design-system/MASTER.md` exclusively
+1. If the project has adopted these generated files, check `design-system/<project-slug>/pages/checkout.md` for a Checkout page.
+2. Within this generated hierarchy, page rules override `design-system/<project-slug>/MASTER.md`; otherwise use that Master as the generated reference.
+3. Generated files do not supersede applicable `AGENTS.md`, approved `DESIGN.md`, or established implementation conventions.
 
 ### Step 3: Supplement with Detailed Searches (as needed)
 
-After getting the design system, use domain searches to get additional details:
+Use focused domain searches when additional guidance helps the task, with or without design-system generation:
 
 ```bash
-python3 skills/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <domain> [-n <max_results>]
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <domain> -n 3
 ```
 
 **When to use detailed searches:**
@@ -109,13 +119,13 @@ python3 skills/ui-ux-pro-max/scripts/search.py "<keyword>" --domain <domain> [-n
 
 ### Step 4: Stack Guidelines (Default: html-tailwind)
 
-Get implementation-specific best practices. If user doesn't specify a stack, **default to `html-tailwind`**.
+Get implementation-specific best practices for the existing or requested stack. Default to `html-tailwind` only when no stack is established.
 
 ```bash
-python3 skills/ui-ux-pro-max/scripts/search.py "<keyword>" --stack html-tailwind
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "<keyword>" --stack html-tailwind
 ```
 
-Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`, `react-native`, `flutter`, `shadcn`, `jetpack-compose`
+Available stacks: `html-tailwind`, `react`, `nextjs`, `astro`, `vue`, `nuxtjs`, `nuxt-ui`, `svelte`, `swiftui`, `react-native`, `flutter`, `shadcn`, `jetpack-compose`
 
 ---
 
@@ -134,7 +144,7 @@ Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`
 | `ux` | Best practices, anti-patterns | animation, accessibility, z-index, loading |
 | `react` | React/Next.js performance | waterfall, bundle, suspense, memo, rerender, cache |
 | `web` | Web interface guidelines | aria, focus, keyboard, semantic, virtualize |
-| `prompt` | AI prompts, CSS keywords | (style name) |
+| `icons` | Icon selection and usage | lucide, heroicons, svg icon |
 
 ### Available Stacks
 
@@ -143,7 +153,10 @@ Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`
 | `html-tailwind` | Tailwind utilities, responsive, a11y (DEFAULT) |
 | `react` | State, hooks, performance, patterns |
 | `nextjs` | SSR, routing, images, API routes |
+| `astro` | Content sites, islands, rendering, integrations |
 | `vue` | Composition API, Pinia, Vue Router |
+| `nuxtjs` | Nuxt rendering, routing, data fetching |
+| `nuxt-ui` | Nuxt UI components, themes, accessibility |
 | `svelte` | Runes, stores, SvelteKit |
 | `swiftui` | Views, State, Navigation, Animation |
 | `react-native` | Components, Navigation, Lists |
@@ -155,6 +168,8 @@ Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`
 
 ## Example Workflow
 
+This example assumes a new visual direction with no established project design. For an existing project, start with its approved design and skip generation unless requested.
+
 **User request:** "Làm landing page cho dịch vụ chăm sóc da chuyên nghiệp"
 
 ### Step 1: Analyze Requirements
@@ -163,10 +178,10 @@ Available stacks: `html-tailwind`, `react`, `nextjs`, `vue`, `svelte`, `swiftui`
 - Industry: Beauty/Wellness
 - Stack: html-tailwind (default)
 
-### Step 2: Generate Design System (REQUIRED)
+### Step 2: Generate a Design System (Conditional)
 
 ```bash
-python3 skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness service elegant" --design-system -p "Serenity Spa"
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness service elegant" --design-system -p "Serenity Spa"
 ```
 
 **Output:** Complete design system with pattern, style, colors, typography, effects, and anti-patterns.
@@ -175,19 +190,19 @@ python3 skills/ui-ux-pro-max/scripts/search.py "beauty spa wellness service eleg
 
 ```bash
 # Get UX guidelines for animation and accessibility
-python3 skills/ui-ux-pro-max/scripts/search.py "animation accessibility" --domain ux
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "animation accessibility" --domain ux
 
 # Get alternative typography options if needed
-python3 skills/ui-ux-pro-max/scripts/search.py "elegant luxury serif" --domain typography
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "elegant luxury serif" --domain typography
 ```
 
 ### Step 4: Stack Guidelines
 
 ```bash
-python3 skills/ui-ux-pro-max/scripts/search.py "layout responsive form" --stack html-tailwind
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "layout responsive form" --stack html-tailwind
 ```
 
-**Then:** Synthesize design system + detailed searches and implement the design.
+**Then:** For this new direction, synthesize the recommendations and relevant searches. Implement only within the user's requested scope; retain approved project decisions where applicable.
 
 ---
 
@@ -197,10 +212,10 @@ The `--design-system` flag supports two output formats:
 
 ```bash
 # ASCII box (default) - best for terminal display
-python3 skills/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system
 
 # Markdown - best for documentation
-python3 skills/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system -f markdown
+python -B .codex/skills/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system -f markdown
 ```
 
 ---
@@ -210,7 +225,7 @@ python3 skills/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system 
 1. **Be specific with keywords** - "healthcare SaaS dashboard" > "app"
 2. **Search multiple times** - Different keywords reveal different insights
 3. **Combine domains** - Style + Typography + Color = Complete design system
-4. **Always check UX** - Search "animation", "z-index", "accessibility" for common issues
+4. **Check relevant UX** - Search "animation", "z-index", or "accessibility" when useful for the task
 5. **Use stack flag** - Get implementation-specific best practices
 6. **Iterate** - If first search doesn't match, try different keywords
 
@@ -218,7 +233,7 @@ python3 skills/ui-ux-pro-max/scripts/search.py "fintech crypto" --design-system 
 
 ## Common Rules for Professional UI
 
-These are frequently overlooked issues that make UI look unprofessional:
+These are general examples for contexts without an approved alternative. Project tokens, layout conventions, and motion specifications take precedence, including over the timing examples below:
 
 ### Icons & Visual Elements
 
@@ -258,7 +273,7 @@ These are frequently overlooked issues that make UI look unprofessional:
 
 ## Pre-Delivery Checklist
 
-Before delivering UI code, verify these items:
+Before delivering UI code, verify the items relevant to the requested change and supported project modes. The timing ranges below describe generic interaction transitions; they do not replace approved entrance choreography or other project motion specifications:
 
 ### Visual Quality
 - [ ] No emojis used as icons (use SVG instead)

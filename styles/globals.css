@@ -76,7 +76,19 @@ a {
   outline-offset: 3px;
 }
 
+/* Override the unlayered global outline for the newsletter's border-only focus. */
+[aria-labelledby="newsletter-title"] input:focus,
+[aria-labelledby="newsletter-title"] input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   *,
   *::before,
   *::after {

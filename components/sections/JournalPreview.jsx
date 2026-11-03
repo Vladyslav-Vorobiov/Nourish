@@ -4,12 +4,13 @@ import { ArrowUpRight } from "lucide-react";
 import { journalEntries } from "@/data/home";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function JournalPreview() {
   return (
     <section className="border-y border-border-subtle py-20 sm:py-28 lg:py-32" aria-labelledby="journal-title">
       <Container>
-        <div className="grid grid-cols-4 gap-x-3 md:grid-cols-12 md:gap-x-6">
+        <ScrollReveal className="grid grid-cols-4 gap-x-3 md:grid-cols-12 md:gap-x-6">
           <div className="col-span-4 flex items-baseline justify-between md:col-span-12">
             <div>
               <EditorialLabel>Journal</EditorialLabel>
@@ -17,23 +18,23 @@ export function JournalPreview() {
             </div>
             <Link href="/journal" className="hidden border-b border-ink pb-1 text-sm font-medium text-ink transition-colors duration-200 hover:border-olive hover:text-olive sm:inline">All notes</Link>
           </div>
-        </div>
-        <div className="mt-10 grid grid-cols-1 border-t border-border-subtle md:mt-14 md:grid-cols-3">
+        </ScrollReveal>
+        <ScrollReveal className="mt-10 grid grid-cols-1 border-t border-border-subtle md:mt-14 md:grid-cols-3">
           {journalEntries.map((entry) => (
             <article key={entry.title} className="border-b border-border-subtle md:border-b-0 md:border-r md:last:border-r-0">
-              <Link href="/journal" className="group flex min-h-56 flex-col justify-between p-5 transition-colors duration-200 hover:bg-surface md:min-h-72 md:p-7">
+              <Link href="/journal" className="group flex flex-col gap-8 p-5 transition-colors duration-200 hover:bg-surface md:h-full md:min-h-72 md:justify-between md:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <EditorialLabel>{entry.type}</EditorialLabel>
                   <span className="text-xs tracking-[0.08em] text-tomato">{entry.number}</span>
                 </div>
                 <div>
-                  <h3 className="max-w-[12ch] font-display text-3xl leading-[0.95] tracking-[-0.04em] text-ink transition-colors duration-200 group-hover:text-olive">{entry.title}</h3>
+                  <h3 className="text-balance font-display text-3xl leading-[0.95] tracking-[-0.04em] text-ink transition-colors duration-200 group-hover:text-olive">{entry.title}</h3>
                   <ArrowUpRight className="mt-5 text-ink" size={18} strokeWidth={1.5} aria-hidden="true" />
                 </div>
               </Link>
             </article>
           ))}
-        </div>
+        </ScrollReveal>
       </Container>
     </section>
   );

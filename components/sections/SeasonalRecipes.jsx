@@ -1,10 +1,12 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { featuredRecipes } from "@/data/home";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
-import { ImageFrame } from "@/components/ui/ImageFrame";
+import { RecipeCardReveals } from "@/components/ui/RecipeCardReveals";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export function SeasonalRecipes() {
   return (
@@ -14,7 +16,7 @@ export function SeasonalRecipes() {
       aria-labelledby="this-week-title"
     >
       <Container>
-        <div className="grid grid-cols-4 gap-x-3 md:grid-cols-12 md:gap-x-6">
+        <ScrollReveal className="grid grid-cols-4 gap-x-3 md:grid-cols-12 md:gap-x-6">
           <div className="col-span-4 flex items-end justify-between border-b border-border-subtle pb-5 md:col-span-12">
             <div>
               <EditorialLabel>This week</EditorialLabel>
@@ -29,24 +31,26 @@ export function SeasonalRecipes() {
               03 recipes
             </span>
           </div>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-10 grid grid-cols-4 gap-x-3 gap-y-12 md:mt-14 md:grid-cols-12 md:gap-x-6">
+        <RecipeCardReveals className="mt-10 grid grid-cols-4 gap-x-3 gap-y-12 md:mt-14 md:grid-cols-12 md:gap-x-6">
           {featuredRecipes.map((recipe) => (
             <article
               key={recipe.title}
               className={`col-span-4 ${recipe.layout}`}
             >
               <Link href="/recipes" className="group block">
-                <ImageFrame
-                  src={recipe.image}
-                  alt={recipe.alt}
-                  width={1200}
-                  height={1500}
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className={`${recipe.imageClass} relative`}
-                  style={{ objectFit: "cover" }}
-                />
+                <figure className={`relative overflow-hidden bg-surface-2 ${recipe.imageClass}`}>
+                    <Image
+                      src={recipe.image}
+                      alt={recipe.alt}
+                      width={1200}
+                      height={1500}
+                      loading="eager"
+                      sizes="(min-width: 768px) 33vw, 100vw"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                </figure>
                 <div className="mt-4 flex items-start gap-4">
                   <span className="pt-1 text-xs tracking-[0.08em] text-tomato">
                     {recipe.number}
@@ -55,7 +59,7 @@ export function SeasonalRecipes() {
                     <h3 className="font-display text-[clamp(1.75rem,2.4vw,2.5rem)] leading-[0.98] tracking-[-0.04em] text-ink transition-colors duration-200 group-hover:text-olive">
                       {recipe.title}
                     </h3>
-                    <p className="mt-3 max-w-sm text-sm leading-6 text-text-secondary">
+                    <p className="mt-3 max-w-sm text-base leading-6 text-text-secondary">
                       {recipe.description}
                     </p>
                   </div>
@@ -63,7 +67,7 @@ export function SeasonalRecipes() {
               </Link>
             </article>
           ))}
-        </div>
+        </RecipeCardReveals>
       </Container>
     </section>
   );

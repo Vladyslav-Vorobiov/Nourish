@@ -17,13 +17,12 @@ export const featuredRecipes = [
     image: "/images/charred-peach-salad.png",
     alt: "Seasonal salad served in a ceramic bowl",
     imageClass: "aspect-[3/2] md:aspect-[4/5]",
-    layout: "md:col-span-3",
+    layout: "md:col-span-3 lg:mt-12",
   },
   {
     number: "03",
     title: "Basil Oil Pasta",
-    description:
-      "Fragrant basil oil and parmesan, caught in every fold.",
+    description: "Fragrant basil oil and parmesan, caught in every fold.",
     image: "/images/basil-oil-pasta.png",
     alt: "Pasta dish on a dark tabletop",
     imageClass: "aspect-[5/6] md:aspect-square",

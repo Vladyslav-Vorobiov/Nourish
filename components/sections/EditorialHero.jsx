@@ -53,8 +53,8 @@ export function EditorialHero() {
                 className="object-cover object-[60%_50%]"
               />
             </div>
-            <figcaption className="mt-3 flex items-baseline justify-between gap-4 border-t border-border-subtle pt-3 text-[0.6875rem] leading-5 tracking-[0.03em] text-text-secondary">
-              <span><span className="mr-3 text-tomato">08 /</span>The August Table</span>
+            <figcaption className="mt-3 flex items-baseline justify-between gap-4 border-t border-border-subtle pt-3 text-[0.8125rem] leading-5 tracking-[0.03em] text-text-secondary">
+              <span><span className="mr-3 text-[0.6875rem] text-tomato">08 /</span>The August Table</span>
               <span className="text-right">A season of plenty.</span>
             </figcaption>
           </figure>
