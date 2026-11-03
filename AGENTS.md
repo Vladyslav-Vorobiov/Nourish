@@ -27,3 +27,12 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 - Run checks appropriate to the change. Do not add tests for purely cosmetic edits.
 - Finish with a brief summary of changes and checks performed.
   Clearly state any checks that were not run.
+
+## Project references
+
+- For UI tasks, use DESIGN.md as the visual source of truth.
+  Read the relevant sections when starting UI work in a new session,
+  when the file changes, or when needed details are missing from context.
+  Avoid redundant reads within the same session.
+- Consult TODO.md when the task touches deferred work or known limitations.
+- Use Context7 when library documentation is needed, rather than for routine styling changes.

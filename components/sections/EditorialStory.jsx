@@ -31,8 +31,8 @@ export function EditorialStory() {
             <p className="mt-6 max-w-md text-base leading-7 text-text-secondary">
               Market bags full, dinners unhurried. A few notes on late-summer produce, cooking with less effort, and letting the season lead.
             </p>
-            <Link href="/journal" className="mt-8 inline-flex min-h-11 items-center gap-2 border-b border-ink pb-1 text-sm font-medium tracking-[0.03em] text-ink transition-colors duration-200 hover:border-olive hover:text-olive">
-              Read the story <ArrowUpRight size={17} strokeWidth={1.5} aria-hidden="true" />
+            <Link href="/journal" className="arrow-link mt-8 inline-flex min-h-11 items-center gap-2 border-b border-ink pb-1 text-sm font-medium tracking-[0.03em] text-ink transition-colors duration-200 hover:border-olive hover:text-olive focus-visible:border-olive focus-visible:text-olive">
+              Read the story <ArrowUpRight className="link-arrow link-arrow-up-right" size={17} strokeWidth={1.5} aria-hidden="true" />
             </Link>
           </ScrollReveal>
         </div>

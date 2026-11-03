@@ -1,18 +1,28 @@
-import { DM_Sans, DM_Serif_Display } from "next/font/google";
+import localFont from "next/font/local";
 
+import "./fonts/fallbacks.css";
 import "@/styles/globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 
-const dmSans = DM_Sans({
+const dmSans = localFont({
+  src: "./fonts/dm-sans/latin-variable.woff2",
   variable: "--font-dm-sans",
-  subsets: ["latin", "cyrillic"],
+  weight: "400 500",
+  style: "normal",
+  display: "swap",
+  fallback: ["DM Sans Fallback"],
+  adjustFontFallback: false,
 });
 
-const dmSerifDisplay = DM_Serif_Display({
+const dmSerifDisplay = localFont({
+  src: "./fonts/dm-serif-display/latin-regular.woff2",
   variable: "--font-dm-serif-display",
-  subsets: ["latin"],
   weight: "400",
+  style: "normal",
+  display: "swap",
+  fallback: ["DM Serif Display Fallback"],
+  adjustFontFallback: false,
 });
 
 export const metadata = {

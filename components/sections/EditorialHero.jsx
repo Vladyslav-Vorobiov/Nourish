@@ -34,10 +34,10 @@ export function EditorialHero() {
             <div className="order-5 md:order-none md:mt-6">
               <Link
                 href="#this-week"
-                className="inline-flex min-h-11 items-center gap-4 border-b border-ink pb-1 text-sm font-medium tracking-[0.02em] text-ink transition-colors duration-200 hover:border-tomato hover:text-tomato"
+                className="arrow-link inline-flex min-h-11 items-center gap-4 border-b border-ink pb-1 text-sm font-medium tracking-[0.02em] text-ink transition-colors duration-200 hover:border-tomato hover:text-tomato focus-visible:border-tomato focus-visible:text-tomato"
               >
                 Explore the August table
-                <ArrowDownRight size={17} strokeWidth={1.5} aria-hidden="true" />
+                <ArrowDownRight className="link-arrow link-arrow-down-right" size={17} strokeWidth={1.5} aria-hidden="true" />
               </Link>
             </div>
           </div>

@@ -39,7 +39,7 @@ export function SeasonalRecipes() {
               key={recipe.title}
               className={`col-span-4 ${recipe.layout}`}
             >
-              <Link href="/recipes" className="group block">
+              <Link href={recipe.href ?? "/recipes"} className="group block">
                 <figure className={`relative overflow-hidden bg-surface-2 ${recipe.imageClass}`}>
                     <Image
                       src={recipe.image}
@@ -56,7 +56,7 @@ export function SeasonalRecipes() {
                     {recipe.number}
                   </span>
                   <div>
-                    <h3 className="font-display text-[clamp(1.75rem,2.4vw,2.5rem)] leading-[0.98] tracking-[-0.04em] text-ink transition-colors duration-200 group-hover:text-olive">
+                    <h3 className="font-display text-[clamp(1.75rem,2.4vw,2.5rem)] leading-[0.98] tracking-[-0.04em] text-ink transition-colors duration-200 group-hover:text-olive group-focus-visible:text-olive">
                       {recipe.title}
                     </h3>
                     <p className="mt-3 max-w-sm text-base leading-6 text-text-secondary">

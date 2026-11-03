@@ -27,7 +27,7 @@ export function Header() {
         <div className="flex h-18 items-center justify-between gap-6 md:h-20">
           <Link
             href="/"
-            className="font-display text-[2rem] leading-none tracking-[-0.045em] text-ink sm:text-[2.25rem]"
+            className="font-display text-[2rem] leading-none tracking-[-0.045em] text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive sm:text-[2.25rem]"
             onClick={closeMenu}
           >
             Nourish
@@ -38,9 +38,9 @@ export function Header() {
               <Link
                 key={href}
                 href={href}
-                className="text-sm tracking-[0.015em] text-text-primary transition-colors duration-200 hover:text-olive"
+                className="nav-link text-sm tracking-[0.015em] text-text-primary transition-colors duration-200 hover:text-olive focus-visible:text-olive"
               >
-                {label}
+                <span className="nav-link-label">{label}</span>
               </Link>
             ))}
           </nav>
@@ -48,20 +48,20 @@ export function Header() {
           <div className="flex items-center gap-1 sm:gap-3">
             <Link
               href="/search"
-              className="inline-flex size-11 items-center justify-center text-ink transition-colors duration-200 hover:text-olive"
+              className="inline-flex size-11 items-center justify-center text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive"
               aria-label="Search"
             >
               <Search size={19} strokeWidth={1.5} aria-hidden="true" />
             </Link>
             <Link
               href="/saved"
-              className="hidden text-sm tracking-[0.015em] text-text-primary transition-colors duration-200 hover:text-olive lg:inline"
+              className="nav-link hidden text-sm tracking-[0.015em] text-text-primary transition-colors duration-200 hover:text-olive focus-visible:text-olive lg:inline"
             >
-              Saved
+              <span className="nav-link-label">Saved</span>
             </Link>
             <button
               type="button"
-              className="inline-flex size-11 items-center justify-center text-ink lg:hidden"
+              className="inline-flex size-11 items-center justify-center text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive lg:hidden"
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-navigation"
@@ -93,17 +93,17 @@ export function Header() {
                     key={href}
                     href={href}
                     onClick={closeMenu}
-                    className="border-t border-border-subtle py-4 font-display text-3xl tracking-[-0.03em] text-ink transition-colors duration-200 hover:text-olive"
+                    className="nav-link border-t border-border-subtle py-4 font-display text-3xl tracking-[-0.03em] text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive"
                   >
-                    {label}
+                    <span className="nav-link-label">{label}</span>
                   </Link>
                 ))}
                 <Link
                   href="/saved"
                   onClick={closeMenu}
-                  className="border-y border-border-subtle py-4 text-sm uppercase tracking-[0.12em] text-text-secondary transition-colors duration-200 hover:text-olive"
+                  className="nav-link border-y border-border-subtle py-4 text-sm uppercase tracking-[0.12em] text-text-secondary transition-colors duration-200 hover:text-olive focus-visible:text-olive"
                 >
-                  Saved recipes
+                  <span className="nav-link-label">Saved recipes</span>
                 </Link>
               </div>
             </motion.nav>

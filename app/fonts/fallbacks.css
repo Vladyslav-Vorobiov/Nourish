@@ -1,0 +1,19 @@
+/* Preserve the metric-adjusted fallbacks from the previous Google font loader.
+   next/font/local's automatic metrics differ, so layout.jsx uses these faces. */
+@font-face {
+  font-family: "DM Sans Fallback";
+  src: local("Arial");
+  ascent-override: 94.90%;
+  descent-override: 29.66%;
+  line-gap-override: 0.00%;
+  size-adjust: 104.53%;
+}
+
+@font-face {
+  font-family: "DM Serif Display Fallback";
+  src: local("Times New Roman");
+  ascent-override: 94.37%;
+  descent-override: 30.51%;
+  line-gap-override: 0.00%;
+  size-adjust: 109.78%;
+}

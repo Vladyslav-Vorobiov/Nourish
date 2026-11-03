@@ -76,6 +76,58 @@ a {
   outline-offset: 3px;
 }
 
+.nav-link-label {
+  position: relative;
+}
+
+.nav-link-label::after {
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease-out;
+}
+
+.nav-link:focus-visible .nav-link-label::after {
+  transform: scaleX(1);
+}
+
+.link-arrow {
+  transition: transform 180ms ease-out;
+}
+
+.link-arrow-down-right {
+  --arrow-x: 2px;
+  --arrow-y: 2px;
+}
+
+.link-arrow-up-right {
+  --arrow-x: 2px;
+  --arrow-y: -2px;
+}
+
+.link-arrow-left {
+  --arrow-x: -2px;
+  --arrow-y: 0px;
+}
+
+@media (hover: hover) {
+  .nav-link:hover .nav-link-label::after {
+    transform: scaleX(1);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .arrow-link:hover .link-arrow {
+    transform: translate(var(--arrow-x), var(--arrow-y));
+  }
+}
+
 /* Override the unlayered global outline for the newsletter's border-only focus. */
 [aria-labelledby="newsletter-title"] input:focus,
 [aria-labelledby="newsletter-title"] input:focus-visible {

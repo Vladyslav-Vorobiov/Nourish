@@ -16,20 +16,20 @@ export function JournalPreview() {
               <EditorialLabel>Journal</EditorialLabel>
               <h2 id="journal-title" className="mt-3 font-display text-[clamp(2.5rem,4vw,4.25rem)] leading-none tracking-[-0.05em] text-ink">Things worth keeping.</h2>
             </div>
-            <Link href="/journal" className="hidden border-b border-ink pb-1 text-sm font-medium text-ink transition-colors duration-200 hover:border-olive hover:text-olive sm:inline">All notes</Link>
+            <Link href="/journal" className="hidden border-b border-ink pb-1 text-sm font-medium text-ink transition-colors duration-200 hover:border-olive hover:text-olive focus-visible:border-olive focus-visible:text-olive sm:inline">All notes</Link>
           </div>
         </ScrollReveal>
         <ScrollReveal className="mt-10 grid grid-cols-1 border-t border-border-subtle md:mt-14 md:grid-cols-3">
           {journalEntries.map((entry) => (
             <article key={entry.title} className="border-b border-border-subtle md:border-b-0 md:border-r md:last:border-r-0">
-              <Link href="/journal" className="group flex flex-col gap-8 p-5 transition-colors duration-200 hover:bg-surface md:h-full md:min-h-72 md:justify-between md:p-7">
+              <Link href="/journal" className="arrow-link group flex flex-col gap-8 p-5 transition-colors duration-200 hover:bg-surface focus-visible:bg-surface md:h-full md:min-h-72 md:justify-between md:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <EditorialLabel>{entry.type}</EditorialLabel>
                   <span className="text-xs tracking-[0.08em] text-tomato">{entry.number}</span>
                 </div>
                 <div>
-                  <h3 className="text-balance font-display text-3xl leading-[0.95] tracking-[-0.04em] text-ink transition-colors duration-200 group-hover:text-olive">{entry.title}</h3>
-                  <ArrowUpRight className="mt-5 text-ink" size={18} strokeWidth={1.5} aria-hidden="true" />
+                  <h3 className="text-balance font-display text-3xl leading-[0.95] tracking-[-0.04em] text-ink transition-colors duration-200 group-hover:text-olive group-focus-visible:text-olive">{entry.title}</h3>
+                  <ArrowUpRight className="link-arrow link-arrow-up-right mt-5 text-ink" size={18} strokeWidth={1.5} aria-hidden="true" />
                 </div>
               </Link>
             </article>

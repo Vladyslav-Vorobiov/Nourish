@@ -2,6 +2,7 @@ export const featuredRecipes = [
   {
     number: "01",
     title: "Tomato & White Bean Toast",
+    href: "/recipes/tomato-white-bean-toast",
     description:
       "A late-afternoon plate of warm beans, torn basil, and the season's ripest tomatoes.",
     image: "/images/tomato-white-bean-toast.png",
