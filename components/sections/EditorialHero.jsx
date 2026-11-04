@@ -38,7 +38,7 @@ export function EditorialHero() {
                 alt="Heirloom tomatoes and basil on a ceramic plate beside linen and olive oil in warm sunlight"
                 fill
                 preload
-                sizes="(min-width: 1440px) 772px, (min-width: 768px) 58vw, 100vw"
+                sizes="(min-width: 1440px) 774px, (min-width: 1280px) calc(58.3333vw - 66px), (min-width: 768px) calc(58.3333vw - 47.3333px), calc(100vw - 40px)"
                 className="object-cover object-[60%_50%]"
               />
             </div>

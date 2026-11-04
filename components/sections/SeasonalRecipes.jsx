@@ -47,7 +47,7 @@ export function SeasonalRecipes() {
                       width={1200}
                       height={1500}
                       loading="eager"
-                      sizes="(min-width: 768px) 33vw, 100vw"
+                      sizes={recipe.imageSizes}
                       className="absolute inset-0 h-full w-full object-cover"
                     />
                 </figure>

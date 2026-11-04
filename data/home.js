@@ -8,6 +8,7 @@ export const featuredRecipes = [
     image: "/images/tomato-white-bean-toast.png",
     alt: "Tomato and white bean toasts topped with basil on a ceramic plate",
     imageClass: "aspect-[4/5] md:aspect-[5/6]",
+    imageSizes: "(min-width: 1440px) 546px, (min-width: 1280px) calc(41.6667vw - 54px), (min-width: 768px) calc(41.6667vw - 40.6667px), calc(100vw - 40px)",
     layout: "md:col-span-5",
   },
   {
@@ -19,6 +20,7 @@ export const featuredRecipes = [
     image: "/images/charred-peach-salad.png",
     alt: "Seasonal salad served in a ceramic bowl",
     imageClass: "aspect-[3/2] md:aspect-[4/5]",
+    imageSizes: "(min-width: 1440px) 318px, (min-width: 1280px) calc(25vw - 42px), (min-width: 768px) calc(25vw - 34px), calc(100vw - 40px)",
     layout: "md:col-span-3 lg:mt-12",
   },
   {
@@ -29,6 +31,7 @@ export const featuredRecipes = [
     image: "/images/basil-oil-pasta.png",
     alt: "Pasta dish on a dark tabletop",
     imageClass: "aspect-[5/6] md:aspect-square",
+    imageSizes: "(min-width: 1440px) 432px, (min-width: 1280px) calc(33.3333vw - 48px), (min-width: 768px) calc(33.3333vw - 37.3333px), calc(100vw - 40px)",
     layout: "md:col-span-4",
   },
 ];

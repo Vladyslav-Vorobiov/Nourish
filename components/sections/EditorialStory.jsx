@@ -17,7 +17,7 @@ export function EditorialStory() {
               alt="Eggplant, tomatoes, zucchini, plums, and fresh parsley beside an open paper bag on a sunlit wooden kitchen table."
               width={1600}
               height={1200}
-              sizes="(min-width: 768px) 58vw, 100vw"
+              sizes="(min-width: 1440px) 774px, (min-width: 1280px) calc(58.3333vw - 66px), (min-width: 768px) calc(58.3333vw - 47.3333px), calc(100vw - 40px)"
               className="aspect-[5/4]"
               style={{ objectFit: "cover", objectPosition: "center" }}
             />
