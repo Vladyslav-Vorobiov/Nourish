@@ -20,9 +20,11 @@
 - [x] Configure `https://nourish-seven-sigma.vercel.app` as the permanent `metadataBase`; set self-referencing canonical and Open Graph URLs on all eight pages. Verify generated sharing-image URLs use this origin and existing titles/descriptions/images remain unchanged.
 - [x] Add `app/sitemap.js` with exactly the eight existing public pages and absolute production URLs, without invented modification dates. Add `app/robots.js` allowing public pages and referencing the production sitemap. Add the live website link to README.md.
 - [x] Pass focused generated metadata/sitemap/robots checks, full lint, and one production build with no localhost or temporary deployment URLs in production metadata.
-- [ ] After separately authorized publication, verify the updated live canonical/OG URLs, sitemap, robots response, and social-sharing previews on the permanent origin.
+- [x] Complete the first public release on the permanent origin.
+- [x] Complete live verification of canonical/OG URLs, sitemap, robots response, and social-sharing previews on the permanent origin.
+- [x] Record measured Lighthouse results from release verification: mobile Performance 92, Accessibility 100, Best Practices 100, SEO 100; desktop Performance 100, Accessibility 100, Best Practices 100, SEO 100. These are measured results for the reviewed release, not permanent guarantees.
 
-The patched dependency set passes lint/build and has no production dependency audit findings. Sixteen moderate development/build-tooling findings remain as described above. Favicon and sharing images are visually approved. Production sharing/SEO URL configuration is complete and checked locally; live verification remains pending publication. Do not push or deploy until separately requested.
+The first public release and live verification are complete. The patched dependency set passes lint/build and has no production dependency audit findings. Sixteen moderate development/build-tooling findings remain as described above. Favicon and sharing images are visually approved. Production sharing/SEO URL configuration is complete and verified locally and live.
 
 The permanent origin is `https://nourish-seven-sigma.vercel.app`. The newsletter remains an explicitly labelled portfolio demo, with no subscription created. A live subscription service is a separate product decision.
 
