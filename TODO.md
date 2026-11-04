@@ -1,6 +1,6 @@
 # Future ideas
 
-- [ ] Implement the article at `/journal/why-august-tastes-different` and update the homepage “Read the story” CTA to link to it.
+- [x] Implement the article at `/journal/why-august-tastes-different` and update the homepage “Read the story” CTA to link to it.
 - [ ] Replace placeholder destinations in “Things worth keeping.”:
   - “All notes” — journal index
   - “How to build a better pantry”

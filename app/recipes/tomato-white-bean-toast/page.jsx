@@ -53,7 +53,7 @@ export default function TomatoWhiteBeanToastPage() {
       <Container>
         <Link
           href="/#this-week"
-          className="arrow-link inline-flex min-h-11 items-center gap-2 border-b border-ink pb-1 text-sm font-medium tracking-[0.02em] text-ink transition-colors duration-200 hover:border-olive hover:text-olive focus-visible:border-olive focus-visible:text-olive"
+          className="nav-link arrow-link inline-flex min-h-11 items-center gap-2 pb-[5px] text-sm font-medium tracking-[0.02em] text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive"
         >
           <ArrowLeft
             className="link-arrow link-arrow-left"
@@ -61,12 +61,12 @@ export default function TomatoWhiteBeanToastPage() {
             strokeWidth={1.5}
             aria-hidden="true"
           />
-          Back to this week’s recipes
+          <span className="nav-link-label">Back to this week’s recipes</span>
         </Link>
 
         <article aria-labelledby="recipe-title" className="mt-8 md:mt-12">
           <div className="grid grid-cols-4 gap-x-3 gap-y-8 md:grid-cols-12 md:gap-x-6">
-            <header className="col-span-4 min-w-0 border-t border-border-strong pt-4 md:col-span-5 md:self-center md:py-8">
+            <header className="col-span-4 min-w-0 pt-[17px] md:col-span-5 md:self-center md:pt-[33px] md:pb-8">
               <EditorialLabel>Seasonal recipe</EditorialLabel>
               <h1
                 id="recipe-title"
