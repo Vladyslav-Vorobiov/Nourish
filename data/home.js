@@ -58,6 +58,7 @@ export const journalEntries = [
   {
     number: "03",
     title: "What to buy at the market this week",
+    href: "/journal/what-to-buy-at-the-market-this-week",
     type: "Seasonal guide",
   },
 ];
