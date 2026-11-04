@@ -1,8 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowDownRight } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
@@ -31,15 +29,6 @@ export function EditorialHero() {
               Ripe tomatoes, generous greens, and the pleasure of a little less cooking. A late-summer issue for the meals and rituals that bring us to the table.
             </p>
 
-            <div className="order-5 md:order-none md:mt-6">
-              <Link
-                href="#this-week"
-                className="arrow-link inline-flex min-h-11 items-center gap-4 border-b border-ink pb-1 text-sm font-medium tracking-[0.02em] text-ink transition-colors duration-200 hover:border-tomato hover:text-tomato focus-visible:border-tomato focus-visible:text-tomato"
-              >
-                Explore the August table
-                <ArrowDownRight className="link-arrow link-arrow-down-right" size={17} strokeWidth={1.5} aria-hidden="true" />
-              </Link>
-            </div>
           </div>
 
           <figure className="order-3 min-w-0 md:order-none md:col-span-7">

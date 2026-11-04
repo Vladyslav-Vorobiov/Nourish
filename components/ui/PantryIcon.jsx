@@ -1,4 +1,25 @@
 const drawings = {
+  blackberry: (
+    <>
+      <path d="M16 7V3m0 4-5-3m5 3 5-3" />
+      <circle cx="13" cy="10" r="3" />
+      <circle cx="19" cy="10" r="3" />
+      <circle cx="10" cy="15" r="3" />
+      <circle cx="16" cy="15" r="3" />
+      <circle cx="22" cy="15" r="3" />
+      <circle cx="10" cy="21" r="3" />
+      <circle cx="16" cy="21" r="3" />
+      <circle cx="22" cy="21" r="3" />
+      <circle cx="13" cy="26" r="3" />
+      <circle cx="19" cy="26" r="3" />
+    </>
+  ),
+  sweetcorn: (
+    <>
+      <path d="M10 17V9c0-4 3-6 6-6s6 2 6 6v8M16 29C8 26 5 19 5 12c7 2 11 8 11 17Zm0 0c8-3 11-10 11-17-7 2-11 8-11 17Z" />
+      <path d="M16 4v17m-5-12h10m-11 5h12m-12 5h12M16 29v1" />
+    </>
+  ),
   fig: (
     <>
       <path d="M15 4h3v4c0 4 9 7 9 14 0 5-5 7-11 7S5 27 5 22c0-7 9-10 10-14V4Z" />

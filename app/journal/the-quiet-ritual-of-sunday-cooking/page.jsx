@@ -1,8 +1,10 @@
+import { createSharingMetadata } from "@/lib/sharing-metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Fragment } from "react";
 
+import { ArticleEntrance } from "@/components/ui/ArticleEntrance";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
 
@@ -48,6 +50,13 @@ const sections = [
 export const metadata = {
   title,
   description: lead,
+  ...createSharingMetadata({
+    title,
+    description: lead,
+    image: "/images/sharing/the-quiet-ritual-of-sunday-cooking.jpg",
+    alt: "Hands slicing a carrot on a pale wooden board in a warmly lit kitchen.",
+    type: "article",
+  }),
 };
 
 export default function SundayCookingPage() {
@@ -62,7 +71,7 @@ export default function SundayCookingPage() {
           <span className="nav-link-label">Back to journal</span>
         </Link>
 
-        <article aria-labelledby="article-title" className="mt-10 md:mt-14">
+        <ArticleEntrance aria-labelledby="article-title" className="mt-10 md:mt-14">
           <header className="mx-auto max-w-[880px]">
             <EditorialLabel>From the journal</EditorialLabel>
             <h1 id="article-title" className="mt-4 text-balance font-display text-[clamp(2.75rem,6vw,5.5rem)] leading-[1.02] tracking-[-0.045em] text-ink">
@@ -117,7 +126,7 @@ export default function SundayCookingPage() {
               <p>The week can wait until the dishes are done.</p>
             </div>
           </div>
-        </article>
+        </ArticleEntrance>
       </Container>
     </main>
   );

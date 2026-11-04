@@ -40,6 +40,8 @@ export const pantryEntries = [
   ["White Beans", "Cupboard essential", "Keeps: 12 months"],
   ["Peaches", "Peak: August", "Keeps: 3 days"],
   ["Eggplant", "Peak: August", "Keeps: 5 days"],
+  ["Blackberries", "Peak: August–September", "Keeps: ~2–3 days (fridge)"],
+  ["Sweetcorn", "Peak: August–September", "Keeps: ~1–2 days (fridge)"],
 ];
 
 export const journalEntries = [

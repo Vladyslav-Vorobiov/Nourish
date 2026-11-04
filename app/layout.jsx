@@ -27,8 +27,8 @@ const dmSerifDisplay = localFont({
 
 export const metadata = {
   title: {
-    default: "Nourish — Modern Pantry Journal",
-    template: "%s — Nourish",
+    default: "Nourish - Modern Pantry Journal",
+    template: "%s - Nourish",
   },
   description: "A modern journal for a thoughtful kitchen and pantry.",
 };

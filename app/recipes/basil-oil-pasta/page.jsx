@@ -1,7 +1,9 @@
+import { createSharingMetadata } from "@/lib/sharing-metadata";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 import { featuredRecipes } from "@/data/home";
+import { ArticleEntrance } from "@/components/ui/ArticleEntrance";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
 import { ImageFrame } from "@/components/ui/ImageFrame";
@@ -45,6 +47,13 @@ const steps = [
 export const metadata = {
   title: recipe.title,
   description: recipe.description,
+  ...createSharingMetadata({
+    title: recipe.title,
+    description: recipe.description,
+    image: "/images/sharing/basil-oil-pasta.jpg",
+    alt: "Pasta coated in basil oil with grated Parmesan and fresh basil in a ceramic bowl.",
+    type: "article",
+  }),
 };
 
 export default function BasilOilPastaPage() {
@@ -64,7 +73,10 @@ export default function BasilOilPastaPage() {
           <span className="nav-link-label">Back to this week’s recipes</span>
         </Link>
 
-        <article aria-labelledby="recipe-title" className="mt-8 md:mt-12">
+        <ArticleEntrance
+          aria-labelledby="recipe-title"
+          className="mt-8 md:mt-12"
+        >
           <div className="grid grid-cols-4 gap-x-3 gap-y-8 md:grid-cols-12 md:gap-x-6">
             <header className="col-span-4 min-w-0 pt-[17px] md:col-span-5 md:self-center md:pt-[33px] md:pb-8">
               <EditorialLabel>Seasonal recipe</EditorialLabel>
@@ -138,10 +150,10 @@ export default function BasilOilPastaPage() {
                 {steps.map((step, index) => (
                   <li
                     key={step.title}
-                    className="grid grid-cols-[2rem_1fr] gap-3 md:gap-6"
+                    className="grid grid-cols-[2rem_1fr] items-baseline gap-3 md:gap-4"
                   >
                     <span
-                      className="pt-1 text-xs tracking-[0.08em] text-tomato"
+                      className="shrink-0 text-lg font-normal leading-none tracking-[0.08em] text-tomato"
                       aria-hidden="true"
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -173,11 +185,11 @@ export default function BasilOilPastaPage() {
             <p className="mt-3 max-w-[60ch] text-base leading-7 text-text-secondary">
               Keep the basil oil away from direct heat to preserve its fresh
               flavour and colour. Grate the parmesan finely so it melts smoothly
-              into the sauce, and add pasta water gradually—the sauce should coat
-              the folds without pooling underneath.
+              into the sauce, and add pasta water gradually-the sauce should
+              coat the folds without pooling underneath.
             </p>
           </section>
-        </article>
+        </ArticleEntrance>
       </Container>
     </main>
   );

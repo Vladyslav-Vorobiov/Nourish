@@ -1,7 +1,9 @@
+import { createSharingMetadata } from "@/lib/sharing-metadata";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 import { featuredRecipes } from "@/data/home";
+import { ArticleEntrance } from "@/components/ui/ArticleEntrance";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
 import { ImageFrame } from "@/components/ui/ImageFrame";
@@ -46,6 +48,13 @@ const steps = [
 export const metadata = {
   title: recipe.title,
   description: introduction,
+  ...createSharingMetadata({
+    title: recipe.title,
+    description: introduction,
+    image: "/images/sharing/charred-peach-salad.jpg",
+    alt: "Charred peach wedges with leafy greens and cheese in a ceramic bowl.",
+    type: "article",
+  }),
 };
 
 export default function CharredPeachSaladPage() {
@@ -65,7 +74,7 @@ export default function CharredPeachSaladPage() {
           <span className="nav-link-label">Back to this week’s recipes</span>
         </Link>
 
-        <article aria-labelledby="recipe-title" className="mt-8 md:mt-12">
+        <ArticleEntrance aria-labelledby="recipe-title" className="mt-8 md:mt-12">
           <div className="grid grid-cols-4 gap-x-3 gap-y-8 md:grid-cols-12 md:gap-x-6">
             <header className="col-span-4 min-w-0 pt-[17px] md:col-span-5 md:self-center md:pt-[33px] md:pb-8">
               <EditorialLabel>Seasonal recipe</EditorialLabel>
@@ -136,10 +145,10 @@ export default function CharredPeachSaladPage() {
                 {steps.map((step, index) => (
                   <li
                     key={step.title}
-                    className="grid grid-cols-[2rem_1fr] gap-3 md:gap-6"
+                    className="grid grid-cols-[2rem_1fr] items-baseline gap-3 md:gap-4"
                   >
                     <span
-                      className="pt-1 text-xs tracking-[0.08em] text-tomato"
+                      className="shrink-0 text-lg font-normal leading-none tracking-[0.08em] text-tomato"
                       aria-hidden="true"
                     >
                       {String(index + 1).padStart(2, "0")}
@@ -174,7 +183,7 @@ export default function CharredPeachSaladPage() {
               slightly before adding them to the leaves.
             </p>
           </section>
-        </article>
+        </ArticleEntrance>
       </Container>
     </main>
   );

@@ -11,12 +11,11 @@ export function JournalPreview() {
     <section className="border-y border-border-subtle py-20 sm:py-28 lg:py-32" aria-labelledby="journal-title">
       <Container>
         <ScrollReveal className="grid grid-cols-4 gap-x-3 md:grid-cols-12 md:gap-x-6">
-          <div className="col-span-4 flex items-baseline justify-between md:col-span-12">
+          <div className="col-span-4 md:col-span-12">
             <div>
               <EditorialLabel>Journal</EditorialLabel>
               <h2 id="journal-title" className="mt-3 font-display text-[clamp(2.5rem,4vw,4.25rem)] leading-none tracking-[-0.05em] text-ink">Things worth keeping.</h2>
             </div>
-            <Link href="/journal" className="hidden border-b border-ink pb-1 text-sm font-medium text-ink transition-colors duration-200 hover:border-olive hover:text-olive focus-visible:border-olive focus-visible:text-olive sm:inline">All notes</Link>
           </div>
         </ScrollReveal>
         <ScrollReveal className="mt-10 grid grid-cols-1 border-t border-border-subtle md:mt-14 md:grid-cols-3">

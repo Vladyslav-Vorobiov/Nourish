@@ -1,7 +1,9 @@
+import { createSharingMetadata } from "@/lib/sharing-metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 
+import { ArticleEntrance } from "@/components/ui/ArticleEntrance";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
 import { PantryIcon } from "./PantryIcon";
@@ -66,6 +68,13 @@ const sections = [
 export const metadata = {
   title,
   description: lead,
+  ...createSharingMetadata({
+    title,
+    description: lead,
+    image: "/images/sharing/how-to-build-a-better-pantry.jpg",
+    alt: "Glass jars of white beans, lentils, rigatoni and flour on a wooden pantry shelf beside olive oil and ceramic bowls.",
+    type: "article",
+  }),
 };
 
 export default function BetterPantryPage() {
@@ -81,7 +90,7 @@ export default function BetterPantryPage() {
             <span className="nav-link-label">Back to journal</span>
           </Link>
 
-          <article aria-labelledby="article-title" className="mt-8 space-y-10 lg:mt-10 lg:space-y-12">
+          <ArticleEntrance aria-labelledby="article-title" className="mt-8 space-y-10 lg:mt-10 lg:space-y-12">
             <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-2 lg:gap-x-12">
               <header className="min-w-0 lg:col-start-1 lg:row-start-1">
                 <EditorialLabel>Pantry guide</EditorialLabel>
@@ -145,7 +154,7 @@ export default function BetterPantryPage() {
                 <ArrowUpRight className="link-arrow link-arrow-up-right shrink-0" size={17} strokeWidth={1.5} aria-hidden="true" />
               </Link>
             </section>
-          </article>
+          </ArticleEntrance>
         </div>
       </Container>
     </main>

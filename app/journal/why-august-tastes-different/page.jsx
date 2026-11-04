@@ -1,8 +1,10 @@
+import { createSharingMetadata } from "@/lib/sharing-metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
 import { featuredRecipes } from "@/data/home";
+import { ArticleEntrance } from "@/components/ui/ArticleEntrance";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
 
@@ -43,6 +45,13 @@ const sections = [
 export const metadata = {
   title,
   description: lead,
+  ...createSharingMetadata({
+    title,
+    description: lead,
+    image: "/images/sharing/why-august-tastes-different.jpg",
+    alt: "Eggplant, tomatoes, zucchini, plums, and fresh parsley beside an open paper bag on a sunlit wooden kitchen table.",
+    type: "article",
+  }),
 };
 
 export default function WhyAugustTastesDifferentPage() {
@@ -62,7 +71,7 @@ export default function WhyAugustTastesDifferentPage() {
           <span className="nav-link-label">Back to the journal</span>
         </Link>
 
-        <article aria-labelledby="article-title" className="mt-8 md:mt-12">
+        <ArticleEntrance aria-labelledby="article-title" className="mt-8 md:mt-12">
           <header className="mx-auto max-w-[60ch] pt-[17px]">
             <EditorialLabel>Journal</EditorialLabel>
             <h1
@@ -130,7 +139,7 @@ export default function WhyAugustTastesDifferentPage() {
               </ul>
             </section>
           </div>
-        </article>
+        </ArticleEntrance>
       </Container>
     </main>
   );

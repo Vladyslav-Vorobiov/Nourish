@@ -1,8 +1,44 @@
-# dependencies
-node_modules
-.next
+# Dependencies
+/node_modules/
 
+# Next.js build output
+/.next/
+/out/
+/build/
+next-env.d.ts
+*.tsbuildinfo
 
+# Vercel local configuration
+/.vercel/
 
-# env files (can opt-in for committing if needed)
+# Environment variables and secrets
 .env*
+!.env.example
+*.pem
+*.key
+
+# Test coverage and browser artifacts
+/coverage/
+/.playwright-mcp/
+/playwright-report/
+/test-results/
+/blob-report/
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor-local files
+/.idea/
+*.swp
+*.swo
