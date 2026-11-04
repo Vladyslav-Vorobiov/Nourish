@@ -52,6 +52,7 @@ export const journalEntries = [
   {
     number: "02",
     title: "The quiet ritual of Sunday cooking",
+    href: "/journal/the-quiet-ritual-of-sunday-cooking",
     type: "From the journal",
   },
   {
