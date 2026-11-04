@@ -22,7 +22,7 @@ export function JournalPreview() {
         <ScrollReveal className="mt-10 grid grid-cols-1 border-t border-border-subtle md:mt-14 md:grid-cols-3">
           {journalEntries.map((entry) => (
             <article key={entry.title} className="border-b border-border-subtle md:border-b-0 md:border-r md:last:border-r-0">
-              <Link href="/journal" className="arrow-link group flex flex-col gap-8 p-5 transition-colors duration-200 hover:bg-surface focus-visible:bg-surface md:h-full md:min-h-72 md:justify-between md:p-7">
+              <Link href={entry.href ?? "/journal"} className="arrow-link group flex flex-col gap-8 p-5 transition-colors duration-200 hover:bg-surface focus-visible:bg-surface md:h-full md:min-h-72 md:justify-between md:p-7">
                 <div className="flex items-start justify-between gap-4">
                   <EditorialLabel>{entry.type}</EditorialLabel>
                   <span className="text-xs tracking-[0.08em] text-tomato">{entry.number}</span>

@@ -46,6 +46,7 @@ export const journalEntries = [
   {
     number: "01",
     title: "How to build a better pantry",
+    href: "/journal/how-to-build-a-better-pantry",
     type: "Kitchen notes",
   },
   {

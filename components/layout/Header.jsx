@@ -1,18 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useState } from "react";
 
 import { Container } from "@/components/ui/Container";
 
 const navigation = [
-  ["Recipes", "/recipes"],
-  ["Pantry", "/pantry"],
-  ["Seasonal", "/seasonal"],
-  ["Journal", "/journal"],
-  ["About", "/about"],
+  ["Recipes", "/#this-week"],
+  ["Pantry", "/#pantry-index"],
+  ["Journal", "/#journal-title"],
 ];
 
 export function Header() {
@@ -45,20 +43,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-1 sm:gap-3">
-            <Link
-              href="/search"
-              className="inline-flex size-11 items-center justify-center text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive"
-              aria-label="Search"
-            >
-              <Search size={19} strokeWidth={1.5} aria-hidden="true" />
-            </Link>
-            <Link
-              href="/saved"
-              className="nav-link hidden text-sm tracking-[0.015em] text-text-primary transition-colors duration-200 hover:text-olive focus-visible:text-olive lg:inline"
-            >
-              <span className="nav-link-label">Saved</span>
-            </Link>
+          <div className="flex items-center gap-1 sm:gap-3 lg:hidden">
             <button
               type="button"
               className="inline-flex size-11 items-center justify-center text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive lg:hidden"
@@ -93,18 +78,11 @@ export function Header() {
                     key={href}
                     href={href}
                     onClick={closeMenu}
-                    className="nav-link border-t border-border-subtle py-4 font-display text-3xl tracking-[-0.03em] text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive"
+                    className="nav-link border-t border-border-subtle py-4 font-display text-3xl tracking-[-0.03em] text-ink transition-colors duration-200 hover:text-olive focus-visible:text-olive last:border-b"
                   >
                     <span className="nav-link-label">{label}</span>
                   </Link>
                 ))}
-                <Link
-                  href="/saved"
-                  onClick={closeMenu}
-                  className="nav-link border-y border-border-subtle py-4 text-sm uppercase tracking-[0.12em] text-text-secondary transition-colors duration-200 hover:text-olive focus-visible:text-olive"
-                >
-                  <span className="nav-link-label">Saved recipes</span>
-                </Link>
               </div>
             </motion.nav>
           )}

@@ -88,6 +88,16 @@ Frames are rectangular, `overflow-hidden`, with `surface-2` behind the image and
 
 These are homepage frame choices, not mandatory recipe-detail or journal-article ratios. Captions sit outside images; current frames have no text overlay or hover zoom. Preserve descriptive alt text.
 
+## Culinary and botanical iconography
+
+The five original pantry guide SVG drawings in `components/ui/PantryIcon.jsx` are the approved visual reference: bean pod, wheat stalk, tomato, olive oil bottle, and herb sprig. `app/journal/how-to-build-a-better-pantry/PantryIcon.jsx` re-exports this shared component for the article. The shared set also supplies fig, basil sprig, peach, and eggplant accents for the homepage Pantry Index.
+
+- Reuse this style for relevant ingredient and category accents across the project. Check existing assets and component conventions before creating more icons.
+- Use unfilled outlines with consistent **1.5-unit strokes**, rounded caps and joins, and balanced optical scale within a **32×32 viewBox**. The current implementation uses `stroke="currentColor"`, `text-olive` (muted olive), and `size-8` (**32px**); keep similar accents around **28–32px** and non-shrinking beside naturally wrapping headings.
+- Keep accents plain: no decorative backgrounds, enclosing circles, hover effects, or unnecessary animation.
+- Decorative icons must be hidden from assistive technology; the reference uses `aria-hidden="true"` and `focusable="false"`. Functional icons need accessible labels on their controls.
+- Icons may replace purely decorative numbering when they communicate a category more clearly. Preserve numbers that convey sequence, counts, or meaningful identifiers, especially recipe method steps.
+
 ## Links, controls, and keyboard focus
 
 - Global links inherit color and remove text decoration. Navigation and linked card titles turn olive on hover. Editorial calls to action use a 1px bottom border, 4px bottom padding, and small directional arrows; cover hover turns tomato, story/journal hover olive. Color transitions are generally **200ms**. Journal cells also gain a `surface` background on hover.
