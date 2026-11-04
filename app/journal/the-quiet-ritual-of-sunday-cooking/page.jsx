@@ -51,6 +51,7 @@ export const metadata = {
   title,
   description: lead,
   ...createSharingMetadata({
+    pathname: "/journal/the-quiet-ritual-of-sunday-cooking",
     title,
     description: lead,
     image: "/images/sharing/the-quiet-ritual-of-sunday-cooking.jpg",

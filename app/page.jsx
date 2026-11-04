@@ -7,6 +7,7 @@ import { PantryIndex } from "@/components/sections/PantryIndex";
 import { SeasonalRecipes } from "@/components/sections/SeasonalRecipes";
 
 export const metadata = createSharingMetadata({
+  pathname: "/",
   title: "Nourish - Modern Pantry Journal",
   description: "A modern journal for a thoughtful kitchen and pantry.",
   image: "/images/sharing/home.jpg",

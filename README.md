@@ -2,6 +2,8 @@
 
 Nourish is an editorial food magazine built as a frontend portfolio project, exploring seasonal cooking through photography, recipes, and thoughtful kitchen stories.
 
+[Visit Nourish](https://nourish-seven-sigma.vercel.app)
+
 ## Features
 
 - A seasonal homepage with recipe selections, a static Pantry Index, and journal previews.

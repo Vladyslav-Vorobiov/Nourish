@@ -49,6 +49,7 @@ export const metadata = {
   title: recipe.title,
   description: introduction,
   ...createSharingMetadata({
+    pathname: "/recipes/charred-peach-salad",
     title: recipe.title,
     description: introduction,
     image: "/images/sharing/charred-peach-salad.jpg",

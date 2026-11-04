@@ -69,6 +69,7 @@ export const metadata = {
   title,
   description: lead,
   ...createSharingMetadata({
+    pathname: "/journal/how-to-build-a-better-pantry",
     title,
     description: lead,
     image: "/images/sharing/how-to-build-a-better-pantry.jpg",

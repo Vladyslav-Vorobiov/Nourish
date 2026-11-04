@@ -48,6 +48,7 @@ export const metadata = {
   title: recipe.title,
   description: recipe.description,
   ...createSharingMetadata({
+    pathname: "/recipes/basil-oil-pasta",
     title: recipe.title,
     description: recipe.description,
     image: "/images/sharing/basil-oil-pasta.jpg",

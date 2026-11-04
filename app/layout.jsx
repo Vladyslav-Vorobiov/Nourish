@@ -4,6 +4,7 @@ import "./fonts/fallbacks.css";
 import "@/styles/globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { SITE_ORIGIN } from "@/lib/site";
 
 const dmSans = localFont({
   src: "./fonts/dm-sans/latin-variable.woff2",
@@ -26,6 +27,7 @@ const dmSerifDisplay = localFont({
 });
 
 export const metadata = {
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
     default: "Nourish - Modern Pantry Journal",
     template: "%s - Nourish",

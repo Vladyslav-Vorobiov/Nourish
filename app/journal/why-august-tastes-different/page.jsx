@@ -46,6 +46,7 @@ export const metadata = {
   title,
   description: lead,
   ...createSharingMetadata({
+    pathname: "/journal/why-august-tastes-different",
     title,
     description: lead,
     image: "/images/sharing/why-august-tastes-different.jpg",
