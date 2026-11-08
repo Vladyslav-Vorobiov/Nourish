@@ -7,6 +7,7 @@ import { ArticleEntrance } from "@/components/ui/ArticleEntrance";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
 import { ImageFrame } from "@/components/ui/ImageFrame";
+import { RecipeMetadataItem } from "@/components/ui/RecipeMetadataItem";
 
 const recipe = featuredRecipes.find(
   ({ href }) => href === "/recipes/tomato-white-bean-toast",
@@ -89,22 +90,10 @@ export default function TomatoWhiteBeanToastPage() {
               </p>
 
               <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-border-subtle pt-5 text-sm">
-                <div>
-                  <dt className="text-text-secondary">Preparation</dt>
-                  <dd className="mt-1 font-medium text-ink">10 minutes</dd>
-                </div>
-                <div>
-                  <dt className="text-text-secondary">Cooking</dt>
-                  <dd className="mt-1 font-medium text-ink">5 minutes</dd>
-                </div>
-                <div>
-                  <dt className="text-text-secondary">Serves</dt>
-                  <dd className="mt-1 font-medium text-ink">2 · 4 toasts</dd>
-                </div>
-                <div>
-                  <dt className="text-text-secondary">Difficulty</dt>
-                  <dd className="mt-1 font-medium text-ink">Easy</dd>
-                </div>
+                <RecipeMetadataItem icon="clock" label="Preparation">10 minutes</RecipeMetadataItem>
+                <RecipeMetadataItem icon="pot" label="Cooking">5 minutes</RecipeMetadataItem>
+                <RecipeMetadataItem icon="plate-cutlery" label="Serves">2 · 4 toasts</RecipeMetadataItem>
+                <RecipeMetadataItem icon="difficulty" label="Difficulty">Easy</RecipeMetadataItem>
               </dl>
             </header>
 

@@ -7,6 +7,7 @@ import { ArticleEntrance } from "@/components/ui/ArticleEntrance";
 import { Container } from "@/components/ui/Container";
 import { EditorialLabel } from "@/components/ui/EditorialLabel";
 import { ImageFrame } from "@/components/ui/ImageFrame";
+import { RecipeMetadataItem } from "@/components/ui/RecipeMetadataItem";
 
 const recipe = featuredRecipes.find(
   ({ href }) => href === "/recipes/charred-peach-salad",
@@ -90,14 +91,8 @@ export default function CharredPeachSaladPage() {
               </p>
 
               <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-border-subtle pt-5 text-sm">
-                <div>
-                  <dt className="text-text-secondary">Total time</dt>
-                  <dd className="mt-1 font-medium text-ink">20 minutes</dd>
-                </div>
-                <div>
-                  <dt className="text-text-secondary">Serves</dt>
-                  <dd className="mt-1 font-medium text-ink">2</dd>
-                </div>
+                <RecipeMetadataItem icon="clock" label="Total time">20 minutes</RecipeMetadataItem>
+                <RecipeMetadataItem icon="plate-cutlery" label="Serves">2</RecipeMetadataItem>
               </dl>
             </header>
 

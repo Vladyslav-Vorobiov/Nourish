@@ -1,4 +1,28 @@
 const drawings = {
+  pot: (
+    <>
+      <path d="M6 13h20v11a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V13ZM4 13h24M7 13a9 7 0 0 1 18 0M13 6V3h6v3M2 17h4m20 0h4" />
+    </>
+  ),
+  difficulty: (
+    <>
+      <rect x="4" y="20" width="5" height="8" rx="1" />
+      <rect x="13.5" y="12" width="5" height="16" rx="1" />
+      <rect x="23" y="4" width="5" height="24" rx="1" />
+    </>
+  ),
+  clock: (
+    <>
+      <circle cx="16" cy="16" r="12" />
+      <path d="M16 8v8l5 3" />
+    </>
+  ),
+  "plate-cutlery": (
+    <>
+      <circle cx="19" cy="16" r="9" />
+      <path d="M2 4v6a3 3 0 0 0 6 0V4M5 4v24" />
+    </>
+  ),
   blackberry: (
     <>
       <path d="M16 7V3m0 4-5-3m5 3 5-3" />
